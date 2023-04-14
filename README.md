@@ -2,7 +2,7 @@
 - How to build the docker image 
   - ```docker build -t java-spark-docker-app .```
 - How to run the container
-  - ```docker run --rm -it -v ${PWD}:/app --user 1000:1000 java-spark-docker-app bash```
+  - ```docker run --rm -it -v ${PWD}/src:/app/src -v ${PWD}/pom.xml:/app/pom.xml java-spark-docker-app bash```
 - Compiles the project
   - `mvn clean package`
 - How to run the code
