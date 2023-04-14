@@ -24,7 +24,6 @@ COPY . .
 RUN apt-get install -y maven
 
 # Compile the Maven project
-# RUN mvn clean compile
 RUN mvn clean package
 
 # Expose any ports your app might use (optional)
