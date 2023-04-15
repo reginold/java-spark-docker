@@ -17,17 +17,11 @@ RUN wget -q https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-$
 ENV SPARK_HOME=/opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
 ENV PATH=$SPARK_HOME/bin:$PATH
 
-# Copy the Maven project files into the container
-COPY . .
-
 # Install Maven inside the container
 RUN apt-get install -y maven
 
-# Compile the Maven project
-RUN mvn clean package
-
 # Expose any ports your app might use (optional)
-# EXPOSE 8080
+EXPOSE 4040
 
 # Replace the ENTRYPOINT command with an interactive shell (e.g., bash)
 CMD ["bash"]
